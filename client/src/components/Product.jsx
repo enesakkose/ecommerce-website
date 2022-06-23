@@ -1,9 +1,31 @@
 import React from 'react'
 import { BiBasket } from 'react-icons/bi'
+import { useSite } from '../context/SiteContext'
 import './Product.scss'
 
 
 function Product({product}) {
+  
+  const { cart, setCart } = useSite()
+
+  const addToBasket = () => {
+
+    const checkBasket = cart.find((item) => item.productId === product.id)
+    
+    if(checkBasket){
+      checkBasket.quantity += 1
+      setCart([...cart.filter(item => item.productId !== product.id), checkBasket])
+    } else{
+        setCart([...cart, {
+        productId: product.id,
+        quantity: 1
+      }])
+    }
+    
+  }
+  console.log(cart)
+  
+  
   return (
     <div className='productCard'>
         <img src={product.image.url} alt="image" className="productCard__img" />
@@ -14,7 +36,7 @@ function Product({product}) {
           </div>
           <div className="productCard__infoBottom">
             <h5>{product.description.slice(10,-11)}</h5>
-            <BiBasket className='basket' fontSize={24}/>
+            <BiBasket onClick={addToBasket} className='basket' fontSize={24}/>
           </div>
           
         </div>

@@ -7,10 +7,13 @@ export const SiteProvider = ({children}) => {
 
 
     const [products, setProducts] = useState([])
+    const [cart, setCart] = useState([])
 
     const data = {
         products,
-        setProducts
+        setProducts,
+        cart,
+        setCart
     }
 
     return(

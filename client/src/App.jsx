@@ -8,19 +8,19 @@ import { useSite } from './context/SiteContext'
 
 function App() {
 
-  const { products, setProducts } = useSite()
+  const { products, setProducts, cart, setCart } = useSite()
   
   
 
   useEffect(() => {
-    const fetchProducts = async () => {
-    const { data } = await commerce.products.list()
+      const fetchProducts = async () => {
+      const { data } = await commerce.products.list()
 
-    setProducts(data)
-  }
+      setProducts(data)
+    }
     fetchProducts()
   }, [])
- console.log(products)
+ 
 
   return (
     <div className="App">
