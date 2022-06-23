@@ -10,14 +10,14 @@ function Product({product}) {
 
   const addToBasket = () => {
 
-    const checkBasket = cart.find((item) => item.productId === product.id)
+    const checkBasket = cart.find((item) => item.product.id === product.id)
 
     if(checkBasket){
       checkBasket.quantity += 1
-      setCart([...cart.filter(item => item.productId !== product.id), checkBasket])
+      setCart([...cart.filter(item => item.product.id !== product.id), checkBasket])
     } else{
         setCart([...cart, {
-        productId: product.id,
+         product,
         quantity: 1
         
       }])

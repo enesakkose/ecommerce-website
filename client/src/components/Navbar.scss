@@ -4,6 +4,9 @@
     justify-content: space-between;
     padding: 10px 20px;
     border-bottom: 2px solid $lightGray;
+    position: sticky;
+    top: 0;
+    background-color: $white;
 
     .navbar__logo{
         display: flex;
@@ -19,13 +22,24 @@
 
     .navbar__basket{
         position: relative;
+        padding: 5px 10px;
+        border-radius: 25px;
+        transition: 200ms all ease-in-out;
+
+        &:hover{
+            background-color: $lightGray;
+        }
 
         .navbar__basketLength{
             position: absolute;
+            top: -3px;
+            right: 0;
             background: red;
-            padding: 5px;
+            padding: 0 7px;
+            font-size: 14px;
+            font-weight: bold;
             border-radius: 25px;
-            color: ;
+            color: $white;
         }
     }
 }
