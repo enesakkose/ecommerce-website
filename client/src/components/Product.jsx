@@ -11,7 +11,7 @@ function Product({product}) {
   const addToBasket = () => {
 
     const checkBasket = cart.find((item) => item.productId === product.id)
-    
+
     if(checkBasket){
       checkBasket.quantity += 1
       setCart([...cart.filter(item => item.productId !== product.id), checkBasket])
@@ -19,6 +19,7 @@ function Product({product}) {
         setCart([...cart, {
         productId: product.id,
         quantity: 1
+        
       }])
     }
     
@@ -32,7 +33,7 @@ function Product({product}) {
         <div className="productCard__info">
           <div className="productCard__infoTop">
             <h3>{product.name}</h3>
-            <h4>{product.price.raw}</h4>
+            <h4>$ {product.price.raw}</h4>
           </div>
           <div className="productCard__infoBottom">
             <h5>{product.description.slice(10,-11)}</h5>
