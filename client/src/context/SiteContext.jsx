@@ -8,12 +8,19 @@ export const SiteProvider = ({children}) => {
 
     const [products, setProducts] = useState([])
     const [cart, setCart] = useState([])
+    const [theme, setTheme] = useState(false)
+    const [cartBtn, setCartBtn] = useState(false)
 
     const data = {
         products,
         setProducts,
         cart,
-        setCart
+        setCart,
+        theme,
+        setTheme,
+        cartBtn,
+        setCartBtn,
+
     }
 
     return(

@@ -46,3 +46,5 @@ function Product({product}) {
 }
 
 export default Product
+
+//DARK MODE

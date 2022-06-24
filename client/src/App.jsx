@@ -3,12 +3,13 @@ import Navbar from './components/Navbar'
 import Products from './pages/Products'
 import { commerce } from './lib/Commerce'
 import { useSite } from './context/SiteContext' 
+import Cart from './components/Cart'
 
 
 
 function App() {
 
-  const { products, setProducts, cart, setCart } = useSite()
+  const { products, setProducts, cart, setCart, theme } = useSite()
   
   
 
@@ -23,10 +24,11 @@ function App() {
  
 
   return (
-    <div className="App">
+    <div className={`app ${theme ? 'dark' : ''}`}>
           <Navbar/>
       <div className="container">
          <Products/>
+         <Cart/>
       </div>
         
     </div>

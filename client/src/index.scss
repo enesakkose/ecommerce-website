@@ -27,12 +27,17 @@ h1,h2,h3,h4,h5{
 
 button{
   cursor: pointer;
+  
 }
 
 
 .container{
   max-width: 1350px;
   margin: 0 auto;
-
+ 
   
+}
+.dark{
+  background-color: $dark;
+  color: $white;
 }

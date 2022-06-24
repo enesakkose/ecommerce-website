@@ -1,6 +1,7 @@
 .products{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    place-items: center;
     padding: 20px 0;
     gap: 30px;
     

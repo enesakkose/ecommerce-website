@@ -1,0 +1,22 @@
+.themeBtn{
+    position: relative;
+    width: 50px;
+    height: 30px;
+    border-radius: 25px;
+    
+    .themeBtn__switch{
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: $white;
+        transition: 200ms all ease-in-out;
+    }
+
+    .active{
+        left: 25px;
+        background-color: $dark;
+    }
+}
